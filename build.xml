@@ -109,6 +109,7 @@
     </exec>
     <exec executable="git">
       <arg value="reset"/>
+      <arg value="--hard"/>
       <arg value="origin/HEAD"/>
     </exec>
   </target>
