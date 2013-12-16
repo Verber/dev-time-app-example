@@ -145,7 +145,7 @@
 
   <target name="vendor.check">
     <condition property="vendor.check">
-      <available file="${vendor.directory}" type="dir"/>
+      <available file="${basedir}/${vendor.directory}" type="dir"/>
     </condition>
   </target>
 </project>
