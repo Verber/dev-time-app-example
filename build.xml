@@ -114,12 +114,13 @@
     </exec>
   </target>
 
-  <target name="install" depends="vendor.check,composer.init,composer.install" unless="vendor.check">
-    <echo>doing install</echo>
+  <target name="install" depends="vendor.check" unless="vendor.check">
+    <antcall target="composer.init"/>
+    <antcall target="composer.install"/>
   </target>
 
   <target name="update" depends="vendor.check,composer.update" if="vendor.check">
-    <echo>doing update</echo>
+    <antcall target="composer.update"/>
   </target>
 
   <target name="composer.init">
@@ -127,11 +128,11 @@
       <arg value="-c"/>
       <arg value="curl -sS https://getcomposer.org/installer | php"/>
     </exec>
-    <chmod file="composer.phar" perm="ugo+rx"/>
+    <chmod file="${basedir}/composer.phar" perm="ugo+rx"/>
   </target>
 
   <target name="composer.install">
-    <exec executable="composer.phar">
+    <exec executable="${basedir}/composer.phar">
       <arg value="install"/>
     </exec>
   </target>
