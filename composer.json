@@ -51,7 +51,10 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "github-oauth": {
+            "github.com": "e79b7fe34e16b9ec4c938acfc18f4b97fe0e7719"
+        }
     },
     "extra": {
         "symfony-app-dir": "app",
