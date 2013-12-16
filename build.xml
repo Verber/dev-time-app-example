@@ -119,7 +119,7 @@
     <antcall target="composer.install"/>
   </target>
 
-  <target name="update" depends="vendor.check,composer.update" if="vendor.check">
+  <target name="update" depends="vendor.check" if="vendor.check">
     <antcall target="composer.update"/>
   </target>
 
