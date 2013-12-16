@@ -96,7 +96,7 @@
   <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
 
 
-  <target name="deploy" depends="git.pull,install,update"/>
+  <target name="deploy" depends="git.reset_origin_head,install,update"/>
 
   <target name="git.reset_origin_head">
     <exec executable="git">
