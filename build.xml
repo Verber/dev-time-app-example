@@ -93,7 +93,7 @@
     </exec>
   </target>
 
-  <target name="build" depends="clean,parallelTasks,phpunit,phpcb"/>
+  <target name="build" depends="clean,update,install,parallelTasks,phpunit,phpcb"/>
 
 
   <target name="deploy" depends="git.reset_origin_head,update,install"/>
