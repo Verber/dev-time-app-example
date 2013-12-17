@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c2dea7ffc6e240f93a6f3b74dfe8342e",
+    "hash": "12d87264cbc91185b64093038266ad86",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -682,6 +682,17 @@
                 "orm"
             ],
             "time": "2013-11-12 12:40:13"
+        },
+        {
+            "name": "enyo/dropzone",
+            "version": "3.8.2",
+            "dist": {
+                "type": "file",
+                "url": "https://github.com/enyo/dropzone/blob/v3.8.2/downloads/dropzone.min.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
         },
         {
             "name": "incenteev/composer-parameter-handler",

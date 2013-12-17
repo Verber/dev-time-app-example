@@ -14,6 +14,17 @@
                     "type": "file"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "enyo/dropzone",
+                "version": "3.8.2",
+                "dist": {
+                    "url": "https://github.com/enyo/dropzone/blob/v3.8.2/downloads/dropzone.min.js",
+                    "type": "file"
+                }
+            }
         }
     ],
     "autoload": {
@@ -35,7 +46,8 @@
         "braincrafted/bootstrap-bundle": "2.0.x-dev",
         "twbs/bootstrap": "3.0.*",
         "jquery/jquery":  "1.10.*",
-        "knplabs/knp-menu-bundle": "v1.1.2"
+        "knplabs/knp-menu-bundle": "v1.1.2",
+        "enyo/dropzone": "3.8.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",

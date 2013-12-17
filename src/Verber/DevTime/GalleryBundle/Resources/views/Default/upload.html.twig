@@ -3,3 +3,11 @@
 {% block menu %}
     {{ knp_menu_render('VerberDevTimeGalleryBundle:Builder:mainMenu', { 'style': 'pills' }) }}
 {% endblock %}
+
+{% block extra_scripts %}
+    {% javascripts
+    '../vendor/enyo/dropzone/dropzone.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
