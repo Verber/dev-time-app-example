@@ -116,10 +116,16 @@
 
   <target name="install" depends="vendor.check" unless="vendor.check">
     <antcall target="composer.init"/>
+    <exec executable="sudo">
+      <arg line="chmod 777 ./app/cache -R"/>
+    </exec>
     <antcall target="composer.install"/>
   </target>
 
   <target name="update" depends="vendor.check" if="vendor.check">
+    <exec executable="sudo">
+      <arg line="chmod 777 ./app/cache -R"/>
+    </exec>
     <antcall target="composer.update"/>
   </target>
 
