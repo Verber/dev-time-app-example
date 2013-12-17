@@ -13,5 +13,16 @@ use Doctrine\ORM\EntityRepository;
 class AlbumRepository extends EntityRepository
 {
 
-
+    public function findAllWithCovers()
+    {
+        $query = $this->getEntityManager()
+            ->createQuery('
+            SELECT DISTINCT a, i FROM VerberDevTimeGalleryBundle:Image i
+            JOIN i.album a');
+        try {
+            return $query->getArrayResult();
+        } catch (\Doctrine\ORM\NoResultException $e) {
+            return null;
+        }
+    }
 }

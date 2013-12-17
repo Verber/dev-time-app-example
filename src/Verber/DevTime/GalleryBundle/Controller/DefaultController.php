@@ -18,8 +18,26 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
+        $albumsRepository = $this->getDoctrine()->getManager()->getRepository('VerberDevTimeGalleryBundle:Album');
+        $albums = $albumsRepository->findAll();
+
+        $covers = [];
+        $imageRepository = $this->getDoctrine()->getManager()->getRepository('VerberDevTimeGalleryBundle:Image');
+
+        foreach ($albums as $album) {
+            $image = $imageRepository->findOneBy(['album' => $album]);
+            if ($image) {
+                $covers[] = [
+                    'link' => $this->get('router')->generate('view_album', ['id' => $album->getId()]),
+                    'cover' => $this->get('templating.helper.assets')->getUrl($image->getWebPath()),
+                    'title' => $album->getName()
+                ];
+            }
+        }
+
         return [
             'title' => 'Demo Gallery',
+            'covers' => $covers
         ];
     }
 

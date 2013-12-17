@@ -3,3 +3,11 @@
 {% block menu %}
     {{ knp_menu_render('VerberDevTimeGalleryBundle:Builder:mainMenu', { 'style': 'pills' }) }}
 {% endblock %}
+
+{% block content %}
+    <ul>
+        {% for cover in covers %}
+            <li><h2>{{cover.title}}</h2><a href="{{ cover.link }}"><img src="{{ cover.cover }}" /></a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
