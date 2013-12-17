@@ -21,7 +21,7 @@ class Builder extends ContainerAware
         $menu->setCurrentUri($request->getRequestUri());
 
         $menu->addChild('Home', array('route' => 'homepage'));
-        $menu->addChild('Upload', array('route' => 'upload'));
+        $menu->addChild('Upload', array('route' => 'create_album'));
 
         return $menu;
 

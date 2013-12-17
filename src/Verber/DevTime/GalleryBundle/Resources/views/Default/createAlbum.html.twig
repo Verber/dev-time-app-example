@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+
+{% block menu %}
+    {{ knp_menu_render('VerberDevTimeGalleryBundle:Builder:mainMenu', { 'style': 'pills' }) }}
+{% endblock %}
+
+{% block content %}
+    <script type="application/javascript">
+        var uploadUrl = '{{ path('do_upload') }}';
+    </script>
+    <form method="post" class="dropzone" id="gallery_uploader">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+        </div>
+    </form>
+{% endblock %}
+
+{% block extra_styles %}
+    {% stylesheets 'bundles/verberdevtimegallery/css/*'  filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block extra_scripts %}
+    {% javascripts
+    '../vendor/enyo/dropzone/dropzone.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {% javascripts
+    'bundles/verberdevtimegallery/js/*'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

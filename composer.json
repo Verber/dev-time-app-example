@@ -21,7 +21,7 @@
                 "name": "enyo/dropzone",
                 "version": "3.8.2",
                 "dist": {
-                    "url": "https://github.com/enyo/dropzone/blob/v3.8.2/downloads/dropzone.min.js",
+                    "url": "https://raw.github.com/enyo/dropzone/v3.8.2/downloads/dropzone.min.js",
                     "type": "file"
                 }
             }
