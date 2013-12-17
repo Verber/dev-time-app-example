@@ -38,7 +38,7 @@ assetic:
     filters:
         less:
             node: /usr/bin/nodejs
-            node_ptahs: [/usr/lib/node_modules]
+            node_ptahs: [/usr/lib/node_modules, /usr/local/lib/node_modules]
             apply_to: "\.less$"
         cssrewrite: ~
     #closure:
