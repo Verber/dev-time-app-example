@@ -96,7 +96,35 @@
     <target name="build" depends="clean,update,install,parallelTasks,phpunit,phpcb"/>
 
 
-    <target name="deploy" depends="git.reset_origin_head,update,install,symfony.cache.clear,symfony.assetic.dump"/>
+    <target name="deploy" depends="git.reset_origin_head,update,install,symfony.cache.clear,symfony.assets.install,symfony.assetic.dump"/>
+
+    <target name="symfony.database.create">
+        <exec executable="php">
+            <arg file="app/console"/>
+            <arg value="doctrine:database:create"/>
+        </exec>
+    </target>
+
+    <target name="symfony.schema.update">
+        <exec executable="php">
+            <arg file="app/console"/>
+            <arg value="doctrine:schema:update"/>
+            <arg value="--force"/>
+        </exec>
+    </target>
+
+    <target name="symfony.assets.install">
+        <exec executable="php">
+            <arg file="app/console"/>
+            <arg value="assets:install"/>
+            <arg value="--env=dev"/>
+        </exec>
+        <exec executable="php">
+            <arg file="app/console"/>
+            <arg value="assets:install"/>
+            <arg value="--env=prod"/>
+        </exec>
+    </target>
 
     <target name="symfony.assetic.dump">
         <exec executable="php">
@@ -143,10 +171,14 @@
     <target name="install" depends="vendor.check" unless="vendor.check">
         <antcall target="composer.init"/>
         <antcall target="composer.install"/>
+        <antcall target="symfony.database.create"/>
+        <antcall target="symfony.schema.update"/>
     </target>
 
     <target name="update" depends="vendor.check" if="vendor.check">
         <antcall target="composer.update"/>
+        <antcall target="symfony.database.create"/>
+        <antcall target="symfony.schema.update"/>
     </target>
 
     <target name="composer.init">

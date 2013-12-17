@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Verber\DevTime\GalleryBundle\Entity\Image;
 
 class DefaultController extends Controller
 {
@@ -33,27 +35,38 @@ class DefaultController extends Controller
 
     /**
      * @Route("/doupload", name="do_upload")
+     * @param Request $request
      * @return JsonResponse
      */
-    public function doUploadAction()
+    public function doUploadAction(Request $request)
     {
-        $request = $this->get('request');
-        $files = $request->files;
+        $image = new Image();
 
-        // configuration values
-        //$directory = //...
+        $form = $this->createFormBuilder($image, array('csrf_protection' => false))
+            ->add('file', 'file')
+            ->getForm();
 
-        // $file will be an instance of Symfony\Component\HttpFoundation\File\UploadedFile
-        foreach ($files as $uploadedFile) {
-            // name the resulting file
-            //$name = //...
-            //$file = $uploadedFile->move($directory, $name);
+        $form->submit($request);
 
-            // do something with the actual file
-            //$this->doSomething($file);
+        if ($form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($image);
+            $em->flush();
+
+            return new JsonResponse([
+                'success' => 'true',
+                'file' => [
+                    'id' => $image->getId(),
+                    'path' => $image->getWebPath()
+                ]
+            ]);
+        } else {
+            return new JsonResponse([
+                'success' => 'false'
+            ]);
         }
 
-        // return data to the frontend
-        return new JsonResponse([]);
     }
+
 }

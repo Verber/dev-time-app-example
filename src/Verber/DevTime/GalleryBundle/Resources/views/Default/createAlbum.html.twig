@@ -5,14 +5,23 @@
 {% endblock %}
 
 {% block content %}
-    <script type="application/javascript">
-        var uploadUrl = '{{ path('do_upload') }}';
-    </script>
-    <form method="post" class="dropzone" id="gallery_uploader">
-        <div class="fallback">
-            <input name="file" type="file" multiple />
-        </div>
-    </form>
+    <div id="album">
+        <form method="post" action="{{ path('save_album') }}">
+            <div class="fallback">
+                <input name="form[file]" type="file" multiple />
+            </div>
+        </form>
+    </div>
+    <div id="uploader">
+        <script type="application/javascript">
+            var uploadUrl = '{{ path('do_upload') }}';
+        </script>
+        <form method="post" class="dropzone" id="gallery_uploader">
+            <div class="fallback">
+                <input name="form[file]" type="file" multiple />
+            </div>
+        </form>
+    </div>
 {% endblock %}
 
 {% block extra_styles %}
