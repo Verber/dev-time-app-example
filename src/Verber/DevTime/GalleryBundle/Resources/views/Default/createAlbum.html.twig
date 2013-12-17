@@ -6,7 +6,7 @@
 
 {% block content %}
     <div id="album">
-        <form method="post" action="{{ path('save_album') }}">
+        <form method="post" action="{/{ path('save_album') }/}">
             <div class="fallback">
                 <input name="form[file]" type="file" multiple />
             </div>
