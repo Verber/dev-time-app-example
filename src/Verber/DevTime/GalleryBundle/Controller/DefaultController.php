@@ -16,4 +16,12 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @Route("/info")
+     */
+    public function infoAction()
+    {
+        phpinfo();
+    }
 }
