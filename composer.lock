@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2f28ac10ef3a9152b321b390a771a64e",
+    "hash": "cc8822778a03fbc6c6600dcd079c60cd",
     "packages": [
         {
             "name": "braincrafted/bootstrap-bundle",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "70a308ac26086e9ae64204d7328e37ee87e09646"
+                "reference": "b3fb27e9c47c08182050e4d296b9f2c94bed4016"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/70a308ac26086e9ae64204d7328e37ee87e09646",
-                "reference": "70a308ac26086e9ae64204d7328e37ee87e09646",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/b3fb27e9c47c08182050e4d296b9f2c94bed4016",
+                "reference": "b3fb27e9c47c08182050e4d296b9f2c94bed4016",
                 "shasum": ""
             },
             "require": {
@@ -64,7 +64,7 @@
             "keywords": [
                 "bootstrap"
             ],
-            "time": "2013-12-17 11:24:20"
+            "time": "2013-12-17 12:27:51"
         },
         {
             "name": "doctrine/annotations",
@@ -786,6 +786,17 @@
             "time": "2013-11-27 22:51:13"
         },
         {
+            "name": "jquery/jquery",
+            "version": "1.10.2",
+            "dist": {
+                "type": "file",
+                "url": "http://code.jquery.com/jquery-1.10.2.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.1.2",
             "source": {
@@ -1497,6 +1508,48 @@
                 "framework"
             ],
             "time": "2013-12-03 15:23:03"
+        },
+        {
+            "name": "twbs/bootstrap",
+            "version": "v3.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6d03173a1aad98e75f7d33e65b411c519176c59a",
+                "reference": "6d03173a1aad98e75f7d33e65b411c519176c59a",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "bootstrap",
+                "css"
+            ],
+            "time": "2013-12-05 16:09:10"
         },
         {
             "name": "twig/extensions",
