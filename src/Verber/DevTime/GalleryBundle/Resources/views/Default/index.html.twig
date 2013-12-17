@@ -5,9 +5,14 @@
 {% endblock %}
 
 {% block content %}
-    <ul>
+    <ul class="thumbnails">
         {% for cover in covers %}
-            <li><h2>{{cover.title}}</h2><a href="{{ cover.link }}"><img src="{{ cover.cover }}" /></a></li>
+            <li class="span4">
+                <a class="thumbnail" href="{{ cover.link }}">
+                    <img data-src="{{ cover.cover }}" src="{{ cover.cover }}" />
+                </a>
+                <h3>{{ cover.title }}</h3>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}

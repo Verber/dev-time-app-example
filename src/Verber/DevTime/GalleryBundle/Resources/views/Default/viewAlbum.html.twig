@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <ul>
+    <ul class="thumbnails">
         {% for image in images %}
             <li><img src="{{ asset(image.getWebPath()) }}" /></li>
         {% endfor %}
