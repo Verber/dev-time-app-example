@@ -9,19 +9,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="homepage")
      * @Template()
      */
     public function indexAction()
     {
-        return array();
+        return array(
+            'title' => 'Demo Gallery',
+        );
     }
 
     /**
-     * @Route("/info")
+     * @Route("/upload", name="upload")
+     * @Template()
      */
-    public function infoAction()
+    public function uploadAction()
     {
-        phpinfo();
+        return array(
+            'title' => 'Upload Images',
+        );
     }
 }
