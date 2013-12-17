@@ -3,8 +3,19 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1e84c92e13111d9a45f8687192d2723d",
+    "hash": "97f5171e87fce25824e49d9e759e561d",
     "packages": [
+        {
+            "name": "blueimp/bootstrap-image-gallery",
+            "version": "3.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/blueimp/Bootstrap-Image-Gallery/archive/3.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
+        },
         {
             "name": "braincrafted/bootstrap-bundle",
             "version": "2.0.x-dev",

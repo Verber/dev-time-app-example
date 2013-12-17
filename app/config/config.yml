@@ -87,3 +87,18 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+liip_imagine:
+    driver:               gd
+    web_root:             %kernel.root_dir%/../web
+    cache_mkdir_mode:     0777
+    cache_prefix:         /media/cache
+    cache:                web_path
+    cache_clearer:        true
+    data_loader:          filesystem
+    controller_action:    liip_imagine.controller:filterAction
+    formats:              []
+    filter_sets:
+        thumb:
+            filters:
+                thumbnail: { size: [128, 128], mode: inset }

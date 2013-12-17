@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Verber\DevTime\GalleryBundle\VerberDevTimeGalleryBundle(),
             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -3,3 +3,7 @@ verber_dev_time_gallery:
     type:     annotation
     prefix:   /
 
+_imagine:
+    resource: .
+    type:     imagine
+
