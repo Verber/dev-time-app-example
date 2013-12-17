@@ -6,21 +6,17 @@
 
 {% block content %}
     <div id="album">
-        <form method="post" action="{/{ path('save_album') }/}">
+        {{ form(album_form, { 'style': 'inline' }) }}
+    </div>
+    <div id="uploader">
+        <form method="post" action="{{ path('do_upload') }}" class="dropzone" id="gallery_uploader">
             <div class="fallback">
                 <input name="form[file]" type="file" multiple />
             </div>
         </form>
     </div>
-    <div id="uploader">
-        <script type="application/javascript">
-            var uploadUrl = '{{ path('do_upload') }}';
-        </script>
-        <form method="post" class="dropzone" id="gallery_uploader">
-            <div class="fallback">
-                <input name="form[file]" type="file" multiple />
-            </div>
-        </form>
+    <div id="album_link">
+        <a href="{{ path('view_album') }}">View Album</a>
     </div>
 {% endblock %}
 

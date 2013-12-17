@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block menu %}
+    {{ knp_menu_render('VerberDevTimeGalleryBundle:Builder:mainMenu', { 'style': 'pills' }) }}
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for image in images %}
+            <li><img src="{{ asset(image.getWebPath()) }}" /></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

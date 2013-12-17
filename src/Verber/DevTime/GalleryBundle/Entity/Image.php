@@ -38,8 +38,27 @@ class Image
      */
     private $file;
 
+    private $thumbnail;
+
     private $temp;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Album")
+     * @ORM\JoinColumn(name="album_id", referencedColumnName="id")
+     * @Assert\NotBlank
+     */
+    private $album;
+
+    public function setAlbum(Album $album)
+    {
+        $this->album = $album;
+        return $this;
+    }
+
+    public function getAlbum()
+    {
+        return $this->album;
+    }
 
     /**
      * Get id
@@ -107,7 +126,10 @@ class Image
     {
         // get rid of the __DIR__ so it doesn't screw up
         // when displaying uploaded doc/image in the view.
-        return 'uploads/images';
+        if (!is_dir('uploads/images/' . $this->getAlbum()->getId())) {
+            mkdir('uploads/images/' . $this->getAlbum()->getId());
+        }
+        return 'uploads/images/' . $this->getAlbum()->getId();
     }
 
     /**

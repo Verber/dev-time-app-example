@@ -3,6 +3,7 @@
 namespace Verber\DevTime\GalleryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Album
@@ -25,9 +26,9 @@ class Album
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $name;
-
 
     /**
      * Get id

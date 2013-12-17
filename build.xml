@@ -126,7 +126,7 @@
         </exec>
     </target>
 
-    <target name="symfony.assetic.dump">
+    <target name="symfony.assetic.dump" depends="symfony.assets.install">
         <exec executable="php">
             <arg file="app/console"/>
             <arg value="assetic:dump"/>
