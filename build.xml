@@ -96,7 +96,20 @@
   <target name="build" depends="clean,update,install,parallelTasks,phpunit,phpcb"/>
 
 
-  <target name="deploy" depends="git.reset_origin_head,update,install"/>
+  <target name="deploy" depends="git.reset_origin_head,update,install,symfony.cache.clear"/>
+
+  <target name="symfony.cache.clear">
+    <exec executable="php">
+      <arg file="app/console"/>
+      <arg value="cache:clear"/>
+      <arg value="--env=dev"/>
+    </exec>
+    <exec executable="php">
+      <arg file="app/console"/>
+      <arg value="cache:clear"/>
+      <arg value="--env=prod"/>
+    </exec>
+  </target>
 
   <target name="git.reset_origin_head">
     <exec executable="git">
