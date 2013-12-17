@@ -1,0 +1,5 @@
+verber_dev_time_gallery:
+    resource: "@VerberDevTimeGalleryBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
