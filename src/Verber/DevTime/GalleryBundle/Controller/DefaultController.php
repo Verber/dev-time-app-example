@@ -97,7 +97,8 @@ class DefaultController extends Controller
             ]);
         } else {
             return new JsonResponse([
-                'success' => 'false'
+                'success' => 'false',
+                'erros' => $form->getErrors()
             ]);
         }
 
