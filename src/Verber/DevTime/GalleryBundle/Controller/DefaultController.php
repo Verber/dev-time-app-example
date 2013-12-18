@@ -42,6 +42,14 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/info", name="info")
+     */
+    public function infoAction()
+    {
+        phpinfo(); die();
+    }
+
+    /**
      * @Route("/create_album", name="create_album")
      * @Template()
      */
