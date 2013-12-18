@@ -34,7 +34,7 @@ class Image
 
 
     /**
-     * @Assert\File(maxSize="2000000")
+     * @Assert\File(maxSize="6000000")
      */
     private $file;
 
