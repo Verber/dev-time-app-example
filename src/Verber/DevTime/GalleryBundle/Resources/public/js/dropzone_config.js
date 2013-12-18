@@ -6,7 +6,7 @@ $(function() {
 
     var galleryUploader = new Dropzone('#gallery_uploader', {
         paramName: "form[file]", // The name that will be used to transfer the file
-        maxFilesize: 2, // MB
+        maxFilesize: 6, // MB
         acceptedFiles: "image/*",
         addRemoveLinks: false
     });
